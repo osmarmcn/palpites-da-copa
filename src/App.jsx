@@ -1,31 +1,22 @@
-
+import React from "react"
+import{BrowserRouter,Routes,Route} from "react-router-dom"
+import Login from "./componentes/Login"
+import Home from "./paginas/Home"
 
 
 function App() {
   
 
   return (
-     
-      <div className="container p-6 h-screen bg-red-700 text-white flex-col items:center md:flex-row space-y-6 md:space-y-0 md:space-x-6">
-        <div className="md:flex-1">
-          <img src="/imagem/img.png" alt="" className="w-full"/>
-        </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Login" element={<Login/>}/>
 
-        <div className="md:flex-1 flex flex-col space-y-6">
-          <h1 className="text-3xl text-center text-left font-bold">Dê seu palpite na copa do mundo do Catar 2022!</h1>
+      </Routes>
+    </BrowserRouter>
 
-          <button className="text-red-700 bg-white text-xl p-10 py-4 rounded-3xl">
-            Criar minha conta
-          </button>
-
-          <button className="text-red-700 border border-white bg-white text-xl p-10 py-4 rounded-3xl">
-            Criar minha conta
-
-          </button>
-        </div>
-      </div>
-    
-    
+  
   )
 }
 
