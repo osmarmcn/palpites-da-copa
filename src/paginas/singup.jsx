@@ -1,4 +1,4 @@
-import { Icon } from "./Icon/Icon"
+import { Icon } from "./../componentes/Icon/Icon"
 
 
 
@@ -6,14 +6,9 @@ import { Icon } from "./Icon/Icon"
 
 
 
-const Login = () =>{
+const Singup = () =>{
     
-    const Input =({name,type,placeholder,label}) =>{
-        <div className="flex flex-col">
-            <label htmlFor={name} className="text-sm font-bold text-gray-500 mb-2">{label}</label>
-            <input type={type} name={name} id={name} placeholder={placeholder} className="p-3 border border-gray-700 rounded-xl "/>
-        </div>
-    }
+  
 
     return(
         <div>
@@ -30,28 +25,34 @@ const Login = () =>{
                     </a>
                   
                     <h2 className="text-xl font-bold">
-                        Entre na sua conta
+                       Crie sua conta
                     </h2>
                 </section>
                 <form action="" className="p-4 space-y-6">
+                        <div className="flex flex-col">
+                            <label htmlFor="nome" className="text-sm font-bold text-gray-500 mb-2">Qual seu nome?</label>
+                            <input type="text" name="nome" id="nome" placeholder="digite seu nome" className="p-3 border border-gray-700 rounded-xl focus:outline focus:outline-1 focus:outline-gray-700"/>
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="nome de usuário" className="text-sm font-bold text-gray-500 mb-2">Seu nome de usuário</label>
+                            <input type="text" name="userName" id="userName" placeholder="cire seu nome de usuário" className="p-3 border border-gray-700 rounded-xl focus:outline focus:outline-1 focus:outline-gray-700"/>
+                        </div>
 
                         <div className="flex flex-col">
                             <label htmlFor="email" className="text-sm font-bold text-gray-500 mb-2">Qual seu email?</label>
                             <input type="text" name="email" id="email" placeholder="digite seu email" className="p-3 border border-gray-700 rounded-xl focus:outline focus:outline-1 focus:outline-gray-700 "/>
                         </div>
                         <div className="flex flex-col">
-                            <label htmlFor="email" className="text-sm font-bold text-gray-500 mb-2">Qual sua senha</label>
+                            <label htmlFor="password" className="text-sm font-bold text-gray-500 mb-2">Qual sua senha</label>
                             <input type="password" name="senha" id="senha" placeholder="digite seu email" className="p-3 border border-gray-700 rounded-xl focus:outline focus:outline-1 focus:outline-gray-700"/>
                         </div>
+                       
 
                         <div>
-                            <a href="/Dashboard" className="w-full text-center text-white bg-red-500 border text-xl px-8 py-4 rounded-2xl">
-                                Acesse sua conta
-                            </a>
-                        </div>
-
-                       
-                        
+                            <button className="w-full text-center text-white bg-red-500 border text-xl px-8 py-4 rounded-2xl">
+                                Criar sua conta
+                            </button>
+                        </div> 
                 </form>
             </main>
         </div>
@@ -59,27 +60,4 @@ const Login = () =>{
 }
 
 
-export default Login
-
-/*
-
-<Input
-                            label="Qual seu E-mail?"
-                            text="text"
-                            name="email"
-                            placeholder="digite seu email"
-                           
-                        />
-                
-                        <Input
-                            label="Digite sua senha"
-                            text="password"
-                            name="password"
-                            placeholder="digite sua senha"
-                               
-                        />
-
-
-
-
-*/
+export default Singup
