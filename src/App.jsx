@@ -4,6 +4,7 @@ import Login from "./componentes/Login"
 import Home from "./paginas/Home"
 import Singup from "./paginas/singup"
 import { Dashboard } from "./paginas/Dashboard"
+import { Profile } from "./paginas/Profile"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Singup" element={<Singup/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Dashboard" element={<Dashboard/>}/>
+        <Route path="/Profile" element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
 
