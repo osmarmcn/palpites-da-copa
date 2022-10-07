@@ -1,6 +1,35 @@
-import { Icon, Card } from "../componentes"
 
 
+import { Icon, Card, DateSelect } from "../componentes"
+
+
+const DateSelect = () =>{
+
+    const [currentDate,setCurrentDate] = useState(new Date('2022-11-20T00:00:00'))
+
+    const prevDay = () =>{
+        const nextDate = subDays(currentDate, 1)
+        setCurrentDate(nextDate)
+    }
+
+    const nextDay = () =>{
+        const nextDate = addDays(currentDate, 1)
+        setCurrentDate(nextDate)
+
+    }
+
+
+    return(
+        <div className="p-4 flex space-x-4 justify-center ">
+            <Icon name="arrowLeft" className="w-6 text-red-500" onClick={prevDay}/>
+            <span className="font-bold">{format(currentDate, "d 'de' MMMM", {locale: ptBR})}</span>
+            <Icon name="arrowRight" className="w-6 text-red-500" onClick={nextDay}/>
+
+        </div>
+    )
+    
+
+}
 
 export const Profile = () =>{
     return(
@@ -29,12 +58,7 @@ export const Profile = () =>{
 
                 <h2 className="text-red-500 text-xl font-bold">Seus palpites</h2>
 
-                <div className="p-4 flex space-x-4 justify-center ">
-                    <Icon name="arrowLeft" className="w-6 text-red-500"/>
-                    <span className="font-bold">24 de novembro</span>
-                    <Icon name="arrowRight" className="w-6 text-red-500"/>
-
-                </div>
+                <DateSelect/>
 
                 <div className="space-y-8">
                     <Card
