@@ -1,4 +1,4 @@
-import { Icon, Card } from "../componentes"
+import { Icon, Card, DateSelect } from "../componentes"
 
 
 
@@ -29,6 +29,8 @@ export const Dashboard = () =>{
                     <Icon name="arrowRight" className="w-6 text-red-500"/>
 
                 </div>
+
+          
 
                 <div className="space-y-8">
                     <Card
