@@ -27,14 +27,16 @@ model User {
 
 model Game{
    id String @id @default(cuid())
-   teamA String
-   teamB String
+   homeTeam String
+   awayTeam String
    gameTime DateTime
 
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt
 
   hunches Hunch []
+
+  @@unique([homeTeam, awayTeam ,gameTime])
 }
 
 model Hunch{
@@ -48,8 +50,8 @@ model Hunch{
 
 
 
-  teamA Int
-  teamB Int
+  homeTeamScore Int
+  awayTeamScore Int
 
 }
 
