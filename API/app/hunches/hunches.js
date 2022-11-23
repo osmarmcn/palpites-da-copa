@@ -10,8 +10,45 @@ export const create = async ctx =>{
         return
     }
 
-    const {gameId, homeTeamScore=0, awayTeamScore=0 } = ctx.request.body
-    const data = {gameId, homeTeamScore, awayTeamScore}
+    const {gameId, homeTeamScore, awayTeamScore } = ctx.request.body
+
+    try{
+
+        const [hunch] = await prisma.hunch.findMany({
+            where:{userId,gameId},
+            
+        })
+
+        if (hunch){
+            ctx.body = await prisma.hunch.update({
+                where:{
+                    id:hunch.id
+                },
+                data:{
+                    homeTeamScore, 
+                    awayTeamScore
+                }
+            })
+        }else{
+            ctx.body = await prisma.hunch.create({
+                data:{
+                    userId,
+                    gameId, 
+                    homeTeamScore,
+                    awayTeamScore
+                }
+            })
+        }
+            
+
+    }catch(error){
+        console.log(error)
+        ctx.body = error
+        ctx.status = 500
+    }
 
     
+    
 }
+
+

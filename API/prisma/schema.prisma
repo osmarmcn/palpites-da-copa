@@ -53,5 +53,7 @@ model Hunch{
   homeTeamScore Int
   awayTeamScore Int
 
+  @@unique([userId, gameId])
+
 }
 
